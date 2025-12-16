@@ -1,0 +1,212 @@
+/* =========================
+   SkillsSection.css FINAL
+========================= */
+
+/* ===== variables ===== */
+:root{
+  --page-pad: 48px;
+  --gutter: 28px;
+  --card-radius: 16px;
+  --accent: rgba(168,85,247,0.22);
+
+  --bg-start: #1e1b3e;
+  --bg-mid: #2d1b4e;
+  --bg-end: #3d2a5e;
+
+  --logo-small: 56px;
+  --logo-medium: 72px;
+}
+
+/* ===== Section ===== */
+.skills-section{
+  background: linear-gradient(
+    180deg,
+    var(--bg-start) 0%,
+    var(--bg-mid) 30%,
+    var(--bg-end) 60%,
+    var(--bg-start) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  padding: clamp(28px,6vh,64px) 0;
+  color: #f7f7f7;
+}
+
+/* ===== Container ===== */
+.skills-container{
+  width: 100%;
+  max-width: 100%;
+  padding: 0 clamp(16px,4vw,var(--page-pad));
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* ===== Titles ===== */
+.section-title{
+  font-size: clamp(1.6rem,4vw,2.6rem);
+  font-weight: 700;
+  margin: 0;
+}
+.section-title span{
+  background: linear-gradient(135deg,#8b5cf6,#a855f7,#ec4899);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section-sub{
+  margin-top: 8px;
+  color: #d4d4d8;
+  font-size: clamp(.9rem,1.1vw,1.05rem);
+}
+
+/* ===== Grid ===== */
+.skills-grid{
+  margin-top: clamp(24px,5vh,48px);
+  display: grid;
+  gap: var(--gutter);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px){
+  .skills-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== Card ===== */
+.skill-panel{
+  padding: clamp(16px,2vw,26px);
+  border-radius: var(--card-radius);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--accent);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.skill-panel:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(139,92,246,0.18);
+}
+
+/* ===== Header ===== */
+.skill-header{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.skill-icon{
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+.skill-title{
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* ===== Image Gallery ===== */
+.skill-images{
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(86px, 1fr));
+  justify-items: center;
+}
+
+/* ===============================
+   MINI CARD (IMAGE + CAPTION)
+=============================== */
+.skill-image-item{
+  width: 100%;
+  max-width: 96px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 10px 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.skill-image-item:hover{
+  background: rgba(255,255,255,0.09);
+  transform: translateY(-3px);
+}
+
+/* wrapper */
+.skill-image-wrap{
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* image */
+.skill-image{
+  max-width: var(--logo-medium);
+  max-height: var(--logo-medium);
+  object-fit: contain;
+  display: block;
+}
+
+/* caption */
+.skill-caption{
+  font-size: .72rem;
+  color: rgba(255,255,255,.78);
+  text-align: center;
+  line-height: 1.15;
+  max-width: 90px;
+  word-break: break-word;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 760px){
+  .skill-image-item{
+    max-width: 88px;
+    padding: 8px 6px 10px;
+  }
+
+  .skill-image-wrap{
+    width: 58px;
+    height: 58px;
+  }
+
+  .skill-image{
+    max-width: 52px;
+    max-height: 52px;
+  }
+}
+
+/* ===== Animations ===== */
+.fade-in{
+  opacity: 0;
+  animation: fadeUp .9s ease forwards;
+}
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(12px); }
+  to{ opacity:1; transform:none; }
+}
+@keyframes gradientShift{
+  0%,100%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+}
+
+/* ===== Reduce motion ===== */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

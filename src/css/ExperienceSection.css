@@ -1,0 +1,342 @@
+.experience-section {
+  width: 100%;
+  padding: 80px 8%;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+}
+
+.experience-container {
+  width: 100%;
+  max-width: 1250px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #111;
+}
+
+/* CATEGORY HEADER */
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.category-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.category-line {
+  flex: 1;
+  height: 2px;
+  background: #cfcfcf;
+}
+
+/* GRID PROJECT */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 26px;
+  justify-items: center;
+}
+
+.project-card {
+  width: 100%;
+  background: linear-gradient(180deg, #5d3f86 0%, #52386c 100%);
+  position: relative;
+  padding: 20px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #e5e5e5;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: #b5b5b5;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-role,
+.project-date {
+  font-size: 14px;
+  color: #b5dcda;
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fafafa;
+}
+
+.project-company {
+  font-size: 15px;
+  color: #b5b5b5;
+}
+
+.project-description {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #d3eff0;
+}
+
+.project-highlights {
+  font-size: 14px;
+  color: #d5f7fd;
+  padding-left: 18px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;            /* jangan pecah kata, tetap 1 baris */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+  padding: 6px 12px;
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Responsif: badge agak mengecil di layar kecil */
+@media (max-width: 480px) {
+  .tech-badge {
+    max-width: 140px;
+    padding: 5px 10px;
+    font-size: 0.82rem;
+  }
+}
+
+.github-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+  padding: 15px 60px;
+  background:linear-gradient(135deg, #8b5cf6, #a855f7, #ec4899);        /* solid black box */
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1;
+  box-shadow: 0 4px 8px rgba(11,11,11,0.25);
+  transition: transform .12s ease, box-shadow .12s ease;
+  cursor: default;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.github-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
+  text-decoration: underline;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  z-index: 999;
+}
+
+.lightbox-content {
+  position: relative;
+}
+
+.lightbox-image {
+  max-width: 95vw;
+  max-height: 85vh;
+  border-radius: 14px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: white;
+  border-radius: 50%;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .experience-section {
+    padding: 70px 6%;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 60px 4%;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .category-title {
+    font-size: 20px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-image-wrapper {
+    height: 160px;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+
+  .project-company {
+    font-size: 14px;
+  }
+
+  .project-description,
+  .project-highlights {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 50px 2%;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .category-header {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .category-title {
+    font-size: 18px;
+  }
+
+  .category-line {
+    height: 1.5px;
+  }
+
+  .projects-grid {
+    gap: 16px;
+  }
+
+  .project-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .project-image-wrapper {
+    height: 140px;
+    border-radius: 12px;
+  }
+
+  .project-title {
+    font-size: 16px;
+  }
+
+  .project-role,
+  .project-date {
+    font-size: 12px;
+  }
+
+  .project-company {
+    font-size: 13px;
+  }
+
+  .project-description,
+  .project-highlights {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .tech-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+    margin-right: 4px;
+  }
+
+  .github-link {
+    font-size: 12px;
+  }
+
+  .lightbox-close {
+    top: -40px;
+    padding: 6px 10px;
+    font-size: 18px;
+  }
+}

@@ -52,18 +52,6 @@ const SKILLS_DATA = [
     ],
   },
   {
-    id: "frameworks",
-    title: "Frameworks",
-    icon: "🧱",
-    images: [
-      { src: "/assets/skill/flutter.jpg", label: "Flutter", isLogo: true },
-      { src: "/assets/skill/react.jpg", label: "React", isLogo: true },
-      { src: "/assets/skill/laravel.jpg", label: "Laravel", isLogo: true },
-      { src: "/assets/skill/node.jpg", label: "Node.js", isLogo: true },
-      { src: "/assets/skill/boot.avif", label: "Bootstrap", isLogo: true },
-    ],
-  },
-    {
     id: "tools4",
     title: "Tools Testing",
     icon: "🐞",
